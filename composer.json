@@ -1,0 +1,10 @@
+{
+    "name": "proudcommerce/rocketboard",
+    "type": "shopware-frontend-plugin",
+    "version": "1.3.0",
+    "description": "A technical stats plugin for Shopware",
+    "license": "MIT",
+    "extra": {
+        "installer-name": "RocketBoard"
+    }
+}

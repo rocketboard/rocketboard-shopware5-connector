@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- @todo Add your services here -->
+        <service id="rocket_board.subscriber.frontend" class="RocketBoard\Subscriber\Frontend">
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="rocket_board.subscriber.controller_path" class="RocketBoard\Subscriber\ControllerPath">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="rocket_board.subscriber.api_subscriber" class="RocketBoard\Subscriber\ApiSubscriber">
+            <argument id="service_container" type="service" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="rocket_board.commands.shop_info" class="RocketBoard\Commands\ShopInfo">
+            <tag name="console.command" />
+        </service>
+
+
+    </services>
+</container>
