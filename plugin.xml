@@ -3,7 +3,7 @@
         xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
     <label lang="de">RocketBoard</label>
     <label lang="en">RocketBoard</label>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
     <copyright>(c) by ProudCommerce</copyright>
     <license>proprietary</license>
     <link>https://rocketboard.io</link>
@@ -11,6 +11,10 @@
 
     <compatibility minVersion="5.2.0" />
 
+    <changelog version="1.3.1">
+        <changes lang="de">Request-Token als erstes checken</changes>
+        <changes lang="en">Check request token first</changes>
+    </changelog>
     <changelog version="1.3.0">
         <changes lang="de">phpinfo Ausgabe und application.contact zu app data hinzugefügt</changes>
         <changes lang="en">Add phpinfo output and application.contact to app data</changes>

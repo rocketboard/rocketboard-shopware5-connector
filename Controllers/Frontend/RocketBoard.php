@@ -14,8 +14,16 @@ class Shopware_Controllers_Frontend_RocketBoard extends Enlight_Controller_Actio
      */
     public function indexAction()
     {
-        // Assign a template variable
-        $this->View()->assign('name', 'RocketBoard');
+        $aConfig = $this->getPluginConfig();
+        $token = $aConfig['rocketToken'];
+        $reqToken = $this->Request()->getParam('rocketToken', null);
+        if ($token) {
+            if (!$reqToken || $reqToken != $token) {
+                die("Configuration token does not match parameter 'rocketToken'!");
+            }
+        } else {
+            die("Please set a token in the configuration!");
+        }
 
         $pretty = $this->Request()->getParam('pretty', false);
         $toUtf8 = $this->Request()->getParam('toUtf8', false);
@@ -27,17 +35,6 @@ class Shopware_Controllers_Frontend_RocketBoard extends Enlight_Controller_Actio
             case 'plugins':
                 $data = $this->getPluginInfo($what);
                 break;
-        }
-
-        $aConfig = $this->getPluginConfig();
-        $token = $aConfig['rocketToken'];
-        $reqToken = $this->Request()->getParam('rocketToken', null);
-        if ($token) {
-            if (!$reqToken || $reqToken != $token) {
-                die("Configuration token does not match parameter 'rocketToken'!");
-            }
-        } else {
-            die("Please set a token in the configuration!");
         }
 
         array_walk_recursive($data, function (&$value) {

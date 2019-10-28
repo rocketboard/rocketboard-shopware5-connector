@@ -1,7 +1,7 @@
 {
     "name": "rocketboard/shopware5-connector",
     "type": "shopware-frontend-plugin",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "description": "A technical stats plugin for Shopware",
     "license": "MIT",
     "extra": {
