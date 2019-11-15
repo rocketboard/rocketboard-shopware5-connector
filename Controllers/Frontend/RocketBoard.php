@@ -143,7 +143,7 @@ class Shopware_Controllers_Frontend_RocketBoard extends Enlight_Controller_Actio
 
         $data['infrastructure'] = [];
         $data['infrastructure']['platform'] = 'PHP ' . phpversion();
-        $data['infrastructure']['platform_info'] = $this->phpinfo2array();
+        // $data['infrastructure']['platform_info'] = $this->phpinfo2array();
         $data['infrastructure']['os'] = $shopData['os'] . " " . $shopData['arch'] . " " . $shopData['dist'] . " ";
         $data['infrastructure']['db'] = "MySQL " . $shopData['mysqlVersion'];
         $data['infrastructure']['web'] = $shopData['serverSoftware'];
